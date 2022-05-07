@@ -1,0 +1,588 @@
+{% extends 'user-base.html' %}
+
+{% block content %}
+
+      <div class="content parent-content">
+            <div class="container film-info-page">
+                <div class="row2">
+                    <div class="col-xs-12 col-sm-12 col-md-12 _padding_0">
+
+                    {% if movie %}
+                        <div class="main_page_title2">
+
+                            <h1 class="h1_main_title2" >{{ movie.movieName }}</h1>
+                        </div>
+
+
+                        <div class="img_info">
+                            <img class="big_img" alt="Xem phim Baraou no Souretsu - Requiem of the Rose King Vietsub"
+                                src="{{ movie.background }}">
+                            <div class="small_img">
+                                <img class="thumb" alt="Xem phim Baraou no Souretsu - Requiem of the Rose King Vietsub"
+                                    src="{{ movie.picture }}">
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    </div>
+                </div>
+                <div class="row2">
+                    <div class="home-main-left">
+                        <div class="info-page-wrap">
+                            <div class="row2 info-play-wrap">
+                            {% if user %}
+                            {% if movie %}
+                                <div class="col-md-12">
+                                </div>
+                                <div class="_info_wrap">
+                                    <div class="col-md-7 border-left">
+                                        <div class="div-more-info">
+                                            <div class="name">
+                                                <h2 class="name-vi">{{ movie.movieName }}</h2>
+                                                <h3 class="name-eng">{{ movie.movieName }}</h3>
+                                            </div>
+                                            <ul class="more-info">
+                                                <li class="has-color">
+                                                    <i class="fa fa-list"></i><span> Thể loại: </span>
+                                                    <a href="https://animetvn.com/the-loai/hanh-dong.html"
+                                                        title="Phim Hành Động">{{ movie.categoryName }}</a>
+                                                </li>
+                                                <li class="has-color">
+                                                    <i class="fa fa-home"></i><span> Nhà sản xuất: </span>
+                                                    <a href="https://animetvn.com/nha-san-xuat/f31-jcstaff.html"
+                                                        title="J.C.Staff">{{ movie.providerName }}</a>
+                                                </li>
+                                                <li class="has-color"><i class="fa fa-refresh"></i><span> Số tập:
+                                                    </span>{{ movie.chapter }}/{{ movie.totalChapter }} Tập</li>
+                                                <li class="has-color"><i class="fa fa-eye"></i><span> Lượt xem:
+                                                    </span>{{ movie.views }} lượt</li>
+                                                <li class="has-color"><i class="fa fa-calendar"></i><span> Năm phát
+                                                        sóng: </span>Q1 2022</li>
+
+
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="btns">
+                                            <div style="height: 100px;"></div>
+                                            <a title="Xem phim Baraou no Souretsu tập 01" class="btn play-now"
+                                                href="{% url 'userxemphim' user.id movie.id%}">Xem
+                                                phim</a>
+                                            <div class="latest_eps">
+                                                Tập mới cập nhật:
+                                                <a href="https://animetvn.com/xem-phim/f175167-baraou-no-souretsutap-13.html"
+                                                    title="Xem phim Baraou no Souretsu Tập 13">Tập 13</a> |
+                                                <a href="https://animetvn.com/xem-phim/f175038-baraou-no-souretsutap-ova.html"
+                                                    title="Xem phim Baraou no Souretsu Tập OVA">Tập OVA</a> |
+                                                <a href="https://animetvn.com/xem-phim/f174936-baraou-no-souretsutap-12.html"
+                                                    title="Xem phim Baraou no Souretsu Tập 12">Tập 12</a> |
+                                                <a href="https://animetvn.com/xem-phim/f174824-baraou-no-souretsutap-11.html"
+                                                    title="Xem phim Baraou no Souretsu Tập 11">Tập 11</a> |
+                                                <a href="https://animetvn.com/xem-phim/f174733-baraou-no-souretsutap-10.html"
+                                                    title="Xem phim Baraou no Souretsu Tập 10">Tập 10</a> |
+                                            </div>
+
+                                            <a title="facebook save Baraou no Souretsu tập 01"
+                                                class="fb-save fb_iframe_widget"
+                                                href="https://animetvn.com/xem-phim/f173812-baraou-no-souretsu-tap-01.html"
+                                                fb-xfbml-state="rendered"
+                                                fb-iframe-plugin-query="app_id=331501281188076&amp;container_width=0&amp;locale=vi_VN&amp;sdk=joey&amp;uri=https%3A%2F%2Fanimetvn.com%2Fthong-tin-phim%2Ff6406-baraou-no-souretsu.html"><span
+                                                    style="vertical-align: top; width: 0px; height: 0px; overflow: hidden;"><iframe
+                                                        name="f3a33de5d2b8abc" width="1000px" height="1000px"
+                                                        data-testid="fb:save Facebook Social Plugin"
+                                                        title="fb:save Facebook Social Plugin" frameborder="0"
+                                                        allowtransparency="true" allowfullscreen="true" scrolling="no"
+                                                        allow="encrypted-media"
+                                                        src="https://www.facebook.com/v2.6/plugins/save.php?app_id=331501281188076&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df3dbffb2fef74d%26domain%3Danimetvn.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fanimetvn.com%252Ff3296b3d849e988%26relation%3Dparent.parent&amp;container_width=0&amp;locale=vi_VN&amp;sdk=joey&amp;uri=https%3A%2F%2Fanimetvn.com%2Fthong-tin-phim%2Ff6406-baraou-no-souretsu.html"
+                                                        style="border: none; visibility: visible; width: 0px; height: 0px;"></iframe></span></a>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="row2">
+                                        <div class="col-xs-12 col-sm-12 col-md-12 tab tabs-bg">
+
+                                            <ul class="nav nav-tabs gtitle" role="tablist">
+                                                <li role="presentation" class="active left"><a href="#tab-film-content"
+                                                        aria-controls="tab-film-content" role="tab"
+                                                        data-toggle="tab">Nội dung</a></li>
+                                                <li role="presentation" class="right"><a href="#tab-film-music"
+                                                        aria-controls="tab-film-music" role="tab" data-toggle="tab">Nhạc
+                                                        phim</a></li>
+                                            </ul>
+
+                                            <div class="tab-content">
+                                                <div role="tabpanel" class="tab-pane fade active in"
+                                                    id="tab-film-content">
+                                                    <div class="content"> {{ movie.description }} </div>
+                                                </div>
+                                                <div role="tabpanel" class="tab-pane fade" id="tab-film-music">
+                                                    <ul>
+                                                        <li class="title">Bài nhạc mở đầu (Opening Theme)</li>
+                                                        <li class="content">
+                                                            {{ movie.openingSong }} </li>
+                                                        <li class="title">Bài nhạc kết thúc (Ending Theme)</li>
+                                                        <li class="content">
+                                                            {{ movie.closingSong }} </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                            {% endif %}
+                            </div>
+                            <div class="row related_film">
+
+                                <div id="pc_topcomment_200_70"></div>
+                                <div id="mobile_topcomment_300_70"></div>
+                                <div class="play_comment">
+                                    <h3 class="related_film_title2"> Bình luận phim </h3>
+                                    <center>
+                                        <div class="thongbaonew">
+                                            <div class="thongbao60">Admin</div> Cùng nhau thảo luận về bộ phim nhé, vui
+                                            lòng gõ tiếng việt có dấu
+                                        </div>
+                                    </center>
+                                    <ul class="nav nav-tabs" role="tablist">
+                                        <li role="presentation" class="active"><a href="#cm-animetvn"
+                                                aria-controls="cm-animetvn" role="tab" data-toggle="tab">AnimeTVN</a>
+                                        </li>
+                                        <li role="presentation" class=""><a href="#cm-fb" aria-controls="cm-fb"
+                                                role="tab" data-toggle="tab">Facebook</a></li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div role="tabpanel" class="tab-pane active" id="cm-animetvn">
+                                            <div class="cm-frm-wrapper">
+                                                <form action="" method="POST" class="cm-frm" data-film_id="6406">
+                                                    <div class="row">
+                                                        <div class="col-xs-6">
+                                                            <div class="form-group">
+                                                                <input type="text" value="" required="" name="name"
+                                                                    class="cm-name form-control"
+                                                                    placeholder="Nhập tên của bạn (Bắt buộc)">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6">
+                                                            <div class="form-group">
+                                                                <input type="text" value="" name="email"
+                                                                    class="cm-email form-control"
+                                                                    placeholder="Nhập email của bạn (Không bắt buộc)">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xs-12">
+                                                            <div class="form-group">
+                                                                <div id="mceu_9"
+                                                                    class="mce-tinymce mce-container mce-panel"
+                                                                    hidefocus="1" tabindex="-1" role="application"
+                                                                    style="visibility: hidden; border-width: 1px;">
+                                                                    <div id="mceu_9-body"
+                                                                        class="mce-container-body mce-stack-layout">
+                                                                        <div id="mceu_10"
+                                                                            class="mce-toolbar-grp mce-container mce-panel mce-stack-layout-item mce-first"
+                                                                            hidefocus="1" tabindex="-1" role="group">
+                                                                            <div id="mceu_10-body"
+                                                                                class="mce-container-body mce-stack-layout">
+                                                                                <div id="mceu_11"
+                                                                                    class="mce-container mce-toolbar mce-stack-layout-item mce-first"
+                                                                                    role="toolbar">
+                                                                                    <div id="mceu_11-body"
+                                                                                        class="mce-container-body mce-flow-layout">
+                                                                                        <div id="mceu_12"
+                                                                                            class="mce-container mce-flow-layout-item mce-first mce-last mce-btn-group"
+                                                                                            role="group">
+                                                                                            <div id="mceu_12-body">
+                                                                                                <div id="mceu_0"
+                                                                                                    class="mce-widget mce-btn mce-first mce-last"
+                                                                                                    tabindex="-1"
+                                                                                                    aria-labelledby="mceu_0"
+                                                                                                    role="button"
+                                                                                                    aria-label="Ami"
+                                                                                                    aria-haspopup="true">
+                                                                                                    <button
+                                                                                                        role="presentation"
+                                                                                                        type="button"
+                                                                                                        tabindex="-1"><i
+                                                                                                            class="mce-ico mce-i-none"
+                                                                                                            style="background-image: url('https://photos.animetvn.tv/images/Gif/Ami/1.gif')"></i></button>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div id="mceu_13"
+                                                                                    class="mce-container mce-toolbar mce-stack-layout-item"
+                                                                                    role="toolbar">
+                                                                                    <div id="mceu_13-body"
+                                                                                        class="mce-container-body mce-flow-layout">
+                                                                                        <div id="mceu_14"
+                                                                                            class="mce-container mce-flow-layout-item mce-first mce-last mce-btn-group"
+                                                                                            role="group">
+                                                                                            <div id="mceu_14-body">
+                                                                                                <div id="mceu_1"
+                                                                                                    class="mce-widget mce-btn mce-first mce-last"
+                                                                                                    tabindex="-1"
+                                                                                                    aria-labelledby="mceu_1"
+                                                                                                    role="button"
+                                                                                                    aria-label="Cute"
+                                                                                                    aria-haspopup="true">
+                                                                                                    <button
+                                                                                                        role="presentation"
+                                                                                                        type="button"
+                                                                                                        tabindex="-1"><i
+                                                                                                            class="mce-ico mce-i-none"
+                                                                                                            style="background-image: url('https://photos.animetvn.tv/images/Gif/Cute/1.gif')"></i></button>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div id="mceu_15"
+                                                                                    class="mce-container mce-toolbar mce-stack-layout-item"
+                                                                                    role="toolbar">
+                                                                                    <div id="mceu_15-body"
+                                                                                        class="mce-container-body mce-flow-layout">
+                                                                                        <div id="mceu_16"
+                                                                                            class="mce-container mce-flow-layout-item mce-first mce-last mce-btn-group"
+                                                                                            role="group">
+                                                                                            <div id="mceu_16-body">
+                                                                                                <div id="mceu_2"
+                                                                                                    class="mce-widget mce-btn mce-first mce-last"
+                                                                                                    tabindex="-1"
+                                                                                                    aria-labelledby="mceu_2"
+                                                                                                    role="button"
+                                                                                                    aria-label="Emoji"
+                                                                                                    aria-haspopup="true">
+                                                                                                    <button
+                                                                                                        role="presentation"
+                                                                                                        type="button"
+                                                                                                        tabindex="-1"><i
+                                                                                                            class="mce-ico mce-i-none"
+                                                                                                            style="background-image: url('https://photos.animetvn.tv/images/Gif/Emoji/a-winking-face_1f609.png')"></i></button>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div id="mceu_17"
+                                                                                    class="mce-container mce-toolbar mce-stack-layout-item"
+                                                                                    role="toolbar">
+                                                                                    <div id="mceu_17-body"
+                                                                                        class="mce-container-body mce-flow-layout">
+                                                                                        <div id="mceu_18"
+                                                                                            class="mce-container mce-flow-layout-item mce-first mce-last mce-btn-group"
+                                                                                            role="group">
+                                                                                            <div id="mceu_18-body">
+                                                                                                <div id="mceu_3"
+                                                                                                    class="mce-widget mce-btn mce-first mce-last"
+                                                                                                    tabindex="-1"
+                                                                                                    aria-labelledby="mceu_3"
+                                                                                                    role="button"
+                                                                                                    aria-label="Onion"
+                                                                                                    aria-haspopup="true">
+                                                                                                    <button
+                                                                                                        role="presentation"
+                                                                                                        type="button"
+                                                                                                        tabindex="-1"><i
+                                                                                                            class="mce-ico mce-i-none"
+                                                                                                            style="background-image: url('https://photos.animetvn.tv/images/Gif/Onion/001.gif')"></i></button>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div id="mceu_19"
+                                                                                    class="mce-container mce-toolbar mce-stack-layout-item"
+                                                                                    role="toolbar">
+                                                                                    <div id="mceu_19-body"
+                                                                                        class="mce-container-body mce-flow-layout">
+                                                                                        <div id="mceu_20"
+                                                                                            class="mce-container mce-flow-layout-item mce-first mce-last mce-btn-group"
+                                                                                            role="group">
+                                                                                            <div id="mceu_20-body">
+                                                                                                <div id="mceu_4"
+                                                                                                    class="mce-widget mce-btn mce-first mce-last"
+                                                                                                    tabindex="-1"
+                                                                                                    aria-labelledby="mceu_4"
+                                                                                                    role="button"
+                                                                                                    aria-label="Pikalong"
+                                                                                                    aria-haspopup="true">
+                                                                                                    <button
+                                                                                                        role="presentation"
+                                                                                                        type="button"
+                                                                                                        tabindex="-1"><i
+                                                                                                            class="mce-ico mce-i-none"
+                                                                                                            style="background-image: url('https://photos.animetvn.tv/images/Gif/Pikalong/01454bdc0d8fa3c7c7c189269b7da6d6.png')"></i></button>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div id="mceu_21"
+                                                                                    class="mce-container mce-toolbar mce-stack-layout-item"
+                                                                                    role="toolbar">
+                                                                                    <div id="mceu_21-body"
+                                                                                        class="mce-container-body mce-flow-layout">
+                                                                                        <div id="mceu_22"
+                                                                                            class="mce-container mce-flow-layout-item mce-first mce-last mce-btn-group"
+                                                                                            role="group">
+                                                                                            <div id="mceu_22-body">
+                                                                                                <div id="mceu_5"
+                                                                                                    class="mce-widget mce-btn mce-first mce-last"
+                                                                                                    tabindex="-1"
+                                                                                                    aria-labelledby="mceu_5"
+                                                                                                    role="button"
+                                                                                                    aria-label="Popo"
+                                                                                                    aria-haspopup="true">
+                                                                                                    <button
+                                                                                                        role="presentation"
+                                                                                                        type="button"
+                                                                                                        tabindex="-1"><i
+                                                                                                            class="mce-ico mce-i-none"
+                                                                                                            style="background-image: url('https://photos.animetvn.tv/images/Gif/Popo/0431e956dccb7da8a6948208fd987353.png')"></i></button>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div id="mceu_23"
+                                                                                    class="mce-container mce-toolbar mce-stack-layout-item"
+                                                                                    role="toolbar">
+                                                                                    <div id="mceu_23-body"
+                                                                                        class="mce-container-body mce-flow-layout">
+                                                                                        <div id="mceu_24"
+                                                                                            class="mce-container mce-flow-layout-item mce-first mce-last mce-btn-group"
+                                                                                            role="group">
+                                                                                            <div id="mceu_24-body">
+                                                                                                <div id="mceu_6"
+                                                                                                    class="mce-widget mce-btn mce-first mce-last"
+                                                                                                    tabindex="-1"
+                                                                                                    aria-labelledby="mceu_6"
+                                                                                                    role="button"
+                                                                                                    aria-label="Soilider"
+                                                                                                    aria-haspopup="true">
+                                                                                                    <button
+                                                                                                        role="presentation"
+                                                                                                        type="button"
+                                                                                                        tabindex="-1"><i
+                                                                                                            class="mce-ico mce-i-none"
+                                                                                                            style="background-image: url('https://photos.animetvn.tv/images/Gif/Soilider/1.gif')"></i></button>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div id="mceu_25"
+                                                                                    class="mce-container mce-toolbar mce-stack-layout-item"
+                                                                                    role="toolbar">
+                                                                                    <div id="mceu_25-body"
+                                                                                        class="mce-container-body mce-flow-layout">
+                                                                                        <div id="mceu_26"
+                                                                                            class="mce-container mce-flow-layout-item mce-first mce-last mce-btn-group"
+                                                                                            role="group">
+                                                                                            <div id="mceu_26-body">
+                                                                                                <div id="mceu_7"
+                                                                                                    class="mce-widget mce-btn mce-first mce-last"
+                                                                                                    tabindex="-1"
+                                                                                                    aria-labelledby="mceu_7"
+                                                                                                    role="button"
+                                                                                                    aria-label="Troll"
+                                                                                                    aria-haspopup="true">
+                                                                                                    <button
+                                                                                                        role="presentation"
+                                                                                                        type="button"
+                                                                                                        tabindex="-1"><i
+                                                                                                            class="mce-ico mce-i-none"
+                                                                                                            style="background-image: url('https://photos.animetvn.tv/images/Gif/Troll/01-kyghe.gif')"></i></button>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div id="mceu_27"
+                                                                                    class="mce-container mce-toolbar mce-stack-layout-item mce-last"
+                                                                                    role="toolbar">
+                                                                                    <div id="mceu_27-body"
+                                                                                        class="mce-container-body mce-flow-layout">
+                                                                                        <div id="mceu_28"
+                                                                                            class="mce-container mce-flow-layout-item mce-first mce-last mce-btn-group"
+                                                                                            role="group">
+                                                                                            <div id="mceu_28-body">
+                                                                                                <div id="mceu_8"
+                                                                                                    class="mce-widget mce-btn mce-first mce-last"
+                                                                                                    tabindex="-1"
+                                                                                                    aria-labelledby="mceu_8"
+                                                                                                    role="button"
+                                                                                                    aria-label="Tzuki"
+                                                                                                    aria-haspopup="true">
+                                                                                                    <button
+                                                                                                        role="presentation"
+                                                                                                        type="button"
+                                                                                                        tabindex="-1"><i
+                                                                                                            class="mce-ico mce-i-none"
+                                                                                                            style="background-image: url('https://photos.animetvn.tv/images/Gif/Tzuki/Upanhso.tk-1.gif')"></i></button>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div id="mceu_29"
+                                                                            class="mce-edit-area mce-container mce-panel mce-stack-layout-item mce-last"
+                                                                            hidefocus="1" tabindex="-1" role="group"
+                                                                            style="border-width: 1px 0px 0px;"><iframe
+                                                                                id="content_ifr" frameborder="0"
+                                                                                allowtransparency="true"
+                                                                                title="Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help"
+                                                                                src="javascript:&quot;&quot;"
+                                                                                style="width: 100%; height: 100px; display: block;"></iframe>
+                                                                        </div>
+                                                                    </div>
+                                                                </div><textarea name="content"
+                                                                    class="cm-content form-control"
+                                                                    placeholder="Nội dung phải từ 1 đến 900 ký tự."
+                                                                    id="content" aria-hidden="true"
+                                                                    style="display: none;"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xs-12">
+                                                            <div class="form-group">
+                                                                <button type="button" id=""
+                                                                    class="cm-now btn btn-primary ">Gửi <i
+                                                                        class="fa fa-refresh fa-spin"></i></button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <input type="hidden" class="parent_id" name="parent_id" value="0">
+                                                </form>
+                                            </div>
+
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane" id="cm-fb">
+                                            <div class="fb-commment bgfff">
+                                                <div class="fb-comments fb_iframe_widget fb_iframe_widget_fluid_desktop"
+                                                    data-href="http://animetvn.com/thong-tin-phim/f6406-baraou-no-souretsu.html"
+                                                    data-width="100%" data-num-posts="10" data-order-by="reverse_time"
+                                                    data-colorscheme="light" data-include-parent="true"
+                                                    fb-xfbml-state="rendered"
+                                                    fb-iframe-plugin-query="app_id=331501281188076&amp;color_scheme=light&amp;container_width=0&amp;height=100&amp;href=http%3A%2F%2Fanimetvn.com%2Fthong-tin-phim%2Ff6406-baraou-no-souretsu.html&amp;locale=vi_VN&amp;order_by=reverse_time&amp;sdk=joey&amp;version=v2.6&amp;width="
+                                                    style="width: 100%;"><span
+                                                        style="vertical-align: bottom; width: 100%; height: 0px;"><iframe
+                                                            name="f1428f2826d3514" width="1000px" height="100px"
+                                                            data-testid="fb:comments Facebook Social Plugin"
+                                                            title="fb:comments Facebook Social Plugin" frameborder="0"
+                                                            allowtransparency="true" allowfullscreen="true"
+                                                            scrolling="no" allow="encrypted-media"
+                                                            src="https://www.facebook.com/v2.6/plugins/comments.php?app_id=331501281188076&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df2f2dbcd14334d4%26domain%3Danimetvn.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fanimetvn.com%252Ff3296b3d849e988%26relation%3Dparent.parent&amp;color_scheme=light&amp;container_width=0&amp;height=100&amp;href=http%3A%2F%2Fanimetvn.com%2Fthong-tin-phim%2Ff6406-baraou-no-souretsu.html&amp;locale=vi_VN&amp;order_by=reverse_time&amp;sdk=joey&amp;version=v2.6&amp;width="
+                                                            class=""
+                                                            style="border: none; visibility: visible; width: 100%; height: 0px;"></iframe></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="home-main-right">
+
+                        <div class="widget">
+                            <h3>Lịch sử xem phim</h3>
+                            <div class="history-sidebar">
+                                <ul class="history-sidebar-list">
+                                    {% for item in history %}
+                                    <li class="history-sidebar-item-wrap">
+                                        <div class="img">
+                                            <a href="https://animetvn.com/xem-phim/f62773-cowboy-bebop-ban-blu-raytap-17.html"
+                                                class="">
+                                                <img src="{{ item.picture }}"
+                                                    class="thumb img-responsive" alt="Cowboy Bebop - Cowboy Bebop [BD]">
+                                            </a>
+                                        </div>
+                                        <div class="info">
+                                            <h4><a
+                                                    href="https://animetvn.com/xem-phim/f62773-cowboy-bebop-ban-blu-raytap-17.html">{{ item.movieName }}</a></h4>
+                                        </div>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="https://animetvn.com/lich-su" class="history-film-list-view-more">Xem tất cả</a>
+
+
+                        <div class="widget wranks">
+                            <h3>Bảng xếp hạng</h3>
+                            <div class="tabs_wrank">
+
+
+
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active" id="wrank-day">
+                                        <ul class="rank-film-list">
+                                            <li class="item">
+                                                <a href="https://animetvn.com/thong-tin-phim/f2105-one-piece.html">
+                                                    <div class="r_c_wrap"><span class="r_c">1</span></div>
+                                                    <img width="" class="thumb lazyload img-responsive"
+                                                        src="https://photos.animetvn.tv/upload/film/e7c936b5eacd4fd0f89bd7b651954e6b1383245216_full.jpg"
+                                                        alt="One Piece - Đảo Hải Tặc | Vua Hải Tặc">
+                                                    <h3 class="title">One Piece</h3>
+                                                </a>
+                                                <div>
+                                                    <span class="time">1013/??? Tập (Delay)</span>
+                                                </div>
+                                                <div>
+                                                    <span class="viewed"><span>Lượt xem:</span> 10,506</span>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="wrank-week"></div>
+                                    <div role="tabpanel" class="tab-pane" id="wrank-month"></div>
+                                    <div role="tabpanel" class="tab-pane" id="wrank-q"></div>
+                                    <div role="tabpanel" class="tab-pane" id="wrank-year"></div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="pc_footer_980_90"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="mobile_footer_300_70"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+<body marginwidth="0" marginheight="0" data-new-gr-c-s-check-loaded="14.1058.0" data-gr-ext-installed=""></body>

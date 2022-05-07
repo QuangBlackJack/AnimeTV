@@ -1,0 +1,244 @@
+{% extends 'user-base.html' %}
+
+{% block content %}
+
+ <div class="container">
+                <div class="row2">
+                    <div class="col-xs-12 col-sm-12 col-md-13 _padding_0">
+                        <div class="player-area-group bgfff">
+
+                            {% if movie %}
+                            <h1 class="main_page_title">
+                                <a target="_blank" property="v:title" rel="v:url" title="Phim Cowboy Bebop" href="https://animetvn.com/thong-tin-phim/f1478-cowboy-bebop-ban-blu-ray.html">
+                                    {{ movie.movieName }} Tập 1
+                                </a>
+                            </h1>
+                            {% endif %}
+                            <div class="row2">
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+
+
+
+
+                                    <div class="for_loading" style="display: none;"><img src="https://animetvn.tv/ads/img/loading_2.gif"><br>
+                                        <font color="yellow">Đang tải dữ liệu đợi tí nhé.....Nếu đợi lâu quá chưa hiện
+                                            vui lòng F5 tải lại trang hoặc chọn Server dự phòng khác !!!</font>
+                                    </div>
+                                    <div class="players" id="players" style="opacity: 1; height: 450px;">
+                                        <div class="for_player" style="display: none; height: 100%;">
+                                            <span style="position: absolute;right: 3px;width: 55px;height: 55px;"></span>
+                                            <div class=" tab-pane active" id="player_1">
+                                                <div id="myElement"></div>
+                                            </div>
+                                        </div>
+
+                                        {% if movie %}
+                                            <div class="for_iframe" style="height: 100%; margin-top: 0px;"><iframe style="width: 100%" height="440" src="{{ movie.movieLink }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                                        {% endif %}
+                                    </div>
+                                    <div class="thongbaonew">Server <font color="red">#HYD, #FEB</font> Khi click xem sẽ
+                                        bị nhảy quảng cáo của bên cung cấp Server, nhấn tắt bỏ và tiếp tục xem nhé</div>
+                                    <div class="play_actions">
+                                        <ul class="list-inline">
+
+
+                                            <li><a href="javascript:void(0)" id="" class="previous_ep_btn">Tập Trước
+                                                    «</a>
+                                            </li>
+                                            <li><a href="javascript:void(0)" id="" class="next_ep_btn">Tập Kế Tiếp »</a>
+                                            </li>
+
+
+                                        </ul>
+                                    </div>
+
+
+
+                                    <div class="col-xs-12 col-sm-12 col-md-12">
+                                        <input type="hidden" name="phimid" class="hidden" value="1478">
+                                        <input type="hidden" name="_epid" class="hidden" value="62773">
+                                        <div class="eplist" id="_listep">
+                                            <ul class="listep" id="sv_0">
+                                                <li class="svep" id="sv_hung-len-thi-sub"><span class="svname">Hứng Lên
+                                                        Thì Sub</span>
+                                                    <a id="ep_62773" class="tapphim playing" href="https://animetvn.com/xem-phim/f62773-cowboy-bebop-tap-17.html" onclick="" data-title="Cowboy Bebop tập 17" title="Xem phim Cowboy Bebop tập 17">1</a>
+                                                    {% if user %}
+                                                    {% if movie %}
+                                                    {% for item in eps %}
+                                                    {% if movie.movieName == item.movieName %}
+                                                    {% if item.chapter != 1 %}
+                                                        <a id="ep_62757" class="tapphim " href="{% url 'userxemphimtheotap' user.id item.id %}" onclick="" data-title="Cowboy Bebop tập 01" title="Xem phim Cowboy Bebop tập 01">{{ item.chapter }}</a>
+                                                    {% endif %}
+                                                    {% endif %}
+                                                    {% endfor %}
+                                                    {% endif %}
+                                                    {% endif %}
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-12 film-playing-txt">
+                                    </div>
+                                    <br>
+
+                                </div>
+
+                                <div class="player-bottom-wrap">
+                                    <div class="play_reporterror" style="display: none">
+                                        <h4>Báo lỗi phim <span>"Cowboy Bebop"</span></h4>
+                                        <p>
+                                            Mời bạn <b>COPY ĐƯỜNG LINK TẬP PHIM BỊ LỖI</b> và <b>DÁN VÀO KHUNG BÁO
+                                                LỖI</b> bên dưới
+                                            sau đó <b>NÊU LOẠI LỖI</b> mà bạn gặp phải để mình sửa chữa!<br>
+                                            <span class="red">Lưu ý đăng nhập tài khoản thành viên để báo lỗi bạn mới
+                                                nhận được câu trả lời từ Ban Quản Trị</span>
+                                        </p>
+                                        <form action="" method="POST" id="report-error-form">
+                                            <textarea placeholder="Xin hãy báo lỗi thật đầy đủ!" rows="8" class="form-control" required="required" id="message" name="message"></textarea>
+                                            <div class="form-group">
+                                                <button class="btn btn-danger" type="submit">Gửi báo lỗi</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="play_downloadfilm alert alert-warning" id="play_downloadfilm" style="display: none;"></div>
+                                </div>
+                                 <div class="animetvn-main-wrapper" onclick="dh_popup();">
+
+  <div class="content parent-content">
+    <div class="container">
+      <div class="row2">
+        <div class="col-xs-12 col-sm-12 col-md-13 _padding_0">
+
+          <div class="row2">
+            <div style="width: 100%;" class="home-main-left">
+              <div id="pc_topcomment_200_70"></div>
+              <div id="mobile_topcomment_300_70"></div>
+              <div class="play_comment">
+                <h3 class="related_film_title2"> Bình luận phim </h3>
+                <center>
+                  <div class="thongbaonew">
+                    <div class="thongbao60">Admin</div>Cùng nhau thảo luận về bộ phim nhé, vui lòng gõ tiếng việt có dấu
+                  </div>
+                </center>
+                <ul class="nav nav-tabs" role="tablist">
+                  <li role="presentation" class="active"><a href="#cm-animetvn" aria-controls="cm-animetvn" role="tab" data-toggle="tab">AnimeTVN</a></li>
+                  <li role="presentation" class=""><a href="#cm-fb" aria-controls="cm-fb" role="tab" data-toggle="tab">Facebook</a></li>
+                </ul>
+                <div class="tab-content">
+                  <div role="tabpanel" class="tab-pane active" id="cm-animetvn">
+                    <div class="cm-frm-wrapper">
+                      <form action="" method="POST" class="cm-frm" data-film_id="6534">
+                             {% csrf_token %}
+                        <div class="row">
+                          <div class="col-xs-12">
+                            <div class="form-group">
+                             <textarea name="message" style="width: 100%; height: 200px"></textarea>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-12">
+                            <div class="form-group">
+                              <button type="submit" id="" class="cm-now btn btn-primary ">Gửi <i class="fa fa-refresh fa-spin"></i></button>
+                            </div>
+                          </div>
+                        </div>
+                        <input type="hidden" class="parent_id" name="parent_id" value="0">
+                      </form>
+                    </div>
+                    <div>
+
+                        {% if movie %}
+                        {% for item in cm %}
+                        {% if item.movieName == movie.movieName %}
+
+                            <ul class="" style="list-style-type: none; margin-left: -30px ">
+                            <li>
+                              <div style="width: 100%">
+                                <div class="comment-item-left">
+                                  <div class="cmt-user-avatar-wrap">
+                                    <img class="cmt-user-avatar" src="https://animetvn.com/upload/avatar_animetvn_boy.png" alt="">
+                                  </div>
+                                  <div class="cmt-btns">
+                                    <span class="cmt-reply" >Trả lời</span>
+                                  </div>
+                                </div>
+                                <div class="comment-item-right" style="width: 90%">
+                                  <div>
+                                    <span class="cmt-username">
+                                      {{ item.username }} </span>
+                                  </div>
+                                  <div class="content">{{ item.message }}</div>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        {% endif %}
+                        {% endfor %}
+                        {% endif %}
+
+
+
+                    </div>
+                  </div>
+                  <div role="tabpanel" class="tab-pane" id="cm-fb">
+                    <div class="fb-commment bgfff">
+                      <div class="fb-comments fb_iframe_widget fb_iframe_widget_fluid_desktop" data-href="http://animetvn.com/thong-tin-phim/f6534-yofukashi-no-uta.html" data-width="100%" data-num-posts="10" data-order-by="reverse_time" data-colorscheme="light" data-include-parent="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=331501281188076&amp;color_scheme=light&amp;container_width=0&amp;height=100&amp;href=http%3A%2F%2Fanimetvn.com%2Fthong-tin-phim%2Ff6534-yofukashi-no-uta.html&amp;locale=vi_VN&amp;order_by=reverse_time&amp;sdk=joey&amp;version=v2.6&amp;width=" style="width: 100%;"><span style="vertical-align: bottom; width: 100%; height: 0px;"><iframe name="f35368271531e6c" width="1000px" height="100px" data-testid="fb:comments Facebook Social Plugin" title="fb:comments Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v2.6/plugins/comments.php?app_id=331501281188076&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df269fb8f90f4d3c%26domain%3Danimetvn.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fanimetvn.com%252Ff23cf09346a5b5c%26relation%3Dparent.parent&amp;color_scheme=light&amp;container_width=0&amp;height=100&amp;href=http%3A%2F%2Fanimetvn.com%2Fthong-tin-phim%2Ff6534-yofukashi-no-uta.html&amp;locale=vi_VN&amp;order_by=reverse_time&amp;sdk=joey&amp;version=v2.6&amp;width=" class="" style="border: none; visibility: visible; width: 100%; height: 0px;"></iframe></span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="light"></div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div id="pc_footer_980_90"></div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div id="mobile_footer_300_70"></div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+  <div class="hidden" id="pc_logoplay_100_40"></div>
+  <div class="hidden" id="pc_popup_1_1"></div>
+  <div class="hidden" id="mobile_logoplay_100_40"></div>
+  <div class="hidden" id="mobile_popup_1_1"></div>
+</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="light"></div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="pc_footer_980_90"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="mobile_footer_300_70"></div>
+                    </div>
+                </div>
+            </div>
+
+{% endblock %}
+

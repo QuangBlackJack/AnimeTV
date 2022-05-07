@@ -1,0 +1,126 @@
+{% extends 'user-base.html' %}
+
+{% block content %}
+<div class="content parent-content">
+<div class="container">
+<div class="home-main-container">
+<div class="home-main-left">
+<div class="breadcrumbs">
+<div xmlns:v="http://rdf.data-vocabulary.org/#">
+<span typeof="v:Breadcrumb"><a href="https://animetvn.com" property="v:title">AnimeTVN.TV</a></span> &gt;
+<span typeof="v:Breadcrumb">
+{% if title %}
+<a title="Phim Hành Động" href="https://animetvn.com/the-loai/hanh-dong.html" rel="v:url" property="v:title">{{ title.type }}</a>
+{% endif %}
+</span>
+</div>
+</div>
+
+<div class="film-list">
+{% for item in movie %}
+
+  <div class="item film_item ">
+      <div class="film_item_inner">
+          <a href="{% url 'thongtin' item.id%}"
+              class="">
+              <span class="overlay"></span>
+              <img src="{{ item.picture }}"
+                  class="thumb img-responsive"
+                  alt="Baraou no Souretsu - Requiem of the Rose King">
+          </a>
+          <div class="mode">
+              <span class="time">{{ item.chapter }}/{{ item.totalChapter }} Tập</span>
+              <span class="viewed">{{ item.views }}</span>
+              <span class="y-q1-2022 year"><span>Q1 2022</span></span>
+          </div>
+          <div class="data">
+              <h3 class="title"><a
+                      href="{% url 'thongtin' item.id%}"
+                      title="Baraou no Souretsu - Requiem of the Rose King">{{ item.movieName }}</a></h3>
+          </div>
+          <div class="f-description hidden">
+              <div class="noidung">
+                  <h3 class="tooltip_title">{{ item.movieName }}</h3>
+                  <div class="tooltip_content">{{ item.description }}</div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+{% endfor %}
+
+</div>
+
+</div>
+<div class="home-main-right">
+
+                      <div class="widget">
+                          <h3>Lịch sử xem phim</h3>
+                          <div class="history-sidebar">
+                              <ul class="history-sidebar-list">
+                                  {% for item in history %}
+                                  <li class="history-sidebar-item-wrap">
+                                      <div class="img">
+                                          <a href="https://animetvn.com/xem-phim/f62773-cowboy-bebop-ban-blu-raytap-17.html"
+                                              class="">
+                                              <img src="{{ item.picture }}"
+                                                  class="thumb img-responsive" alt="Cowboy Bebop - Cowboy Bebop [BD]">
+                                          </a>
+                                      </div>
+                                      <div class="info">
+                                          <h4><a
+                                                  href="https://animetvn.com/xem-phim/f62773-cowboy-bebop-ban-blu-raytap-17.html">{{ item.movieName }}</a></h4>
+                                      </div>
+                                  </li>
+                                  {% endfor %}
+                              </ul>
+                          </div>
+                      </div>
+                      <a href="https://animetvn.com/lich-su" class="history-film-list-view-more">Xem tất cả</a>
+
+
+                      <div class="widget wranks">
+                          <h3>Bảng xếp hạng</h3>
+                          <div class="tabs_wrank">
+
+
+
+                              <div class="tab-content">
+                                  <div role="tabpanel" class="tab-pane active" id="wrank-day">
+                                      <ul class="rank-film-list">
+                                          <li class="item">
+                                              <a href="https://animetvn.com/thong-tin-phim/f2105-one-piece.html">
+                                                  <div class="r_c_wrap"><span class="r_c">1</span></div>
+                                                  <img width="" class="thumb lazyload img-responsive"
+                                                      src="https://photos.animetvn.tv/upload/film/e7c936b5eacd4fd0f89bd7b651954e6b1383245216_full.jpg"
+                                                      alt="One Piece - Đảo Hải Tặc | Vua Hải Tặc">
+                                                  <h3 class="title">One Piece</h3>
+                                              </a>
+                                              <div>
+                                                  <span class="time">1013/??? Tập (Delay)</span>
+                                              </div>
+                                              <div>
+                                                  <span class="viewed"><span>Lượt xem:</span> 10,506</span>
+                                              </div>
+                                          </li>
+
+                                      </ul>
+                                  </div>
+                                  <div role="tabpanel" class="tab-pane" id="wrank-week"></div>
+                                  <div role="tabpanel" class="tab-pane" id="wrank-month"></div>
+                                  <div role="tabpanel" class="tab-pane" id="wrank-q"></div>
+                                  <div role="tabpanel" class="tab-pane" id="wrank-year"></div>
+                              </div>
+                          </div>
+                      </div>
+
+
+                  </div>
+</div>
+</div>
+</div>
+{% endblock %}
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/x9GWnjY_FHA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

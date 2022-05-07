@@ -1,0 +1,266 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="content parent-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-8">
+                        <div class="bgfff login-form-wrap">
+                            <h1 class="main_page_title">Đăng nhập</h1>
+                            <form action="{%url 'userIndex'%}" method="POST" class="login-form">
+                                {% csrf_token %}
+
+                                <div class="form-group">
+                                    <label for="username">Tên đăng nhập</label>
+                                    <input type="text" name="username" value="" id="username" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Mật khẩu</label>
+                                    <input type="password" name="password" id="password" class="form-control">
+                                </div>
+
+
+                                <input class="btn btn-success" value="Đăng nhập" type="submit">
+
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-4">
+
+                        <div class="widget">
+                            <h3>Lịch sử xem phim</h3>
+                            <div class="history-sidebar">
+                                <ul class="history-sidebar-list">
+                                    {% for item in history %}
+                                    <li class="history-sidebar-item-wrap">
+                                        <div class="img">
+                                            <a href="https://animetvn.com/xem-phim/f62773-cowboy-bebop-ban-blu-raytap-17.html"
+                                                class="">
+                                                <img src="{{ item.picture }}"
+                                                    class="thumb img-responsive" alt="Cowboy Bebop - Cowboy Bebop [BD]">
+                                            </a>
+                                        </div>
+                                        <div class="info">
+                                            <h4><a
+                                                    href="https://animetvn.com/xem-phim/f62773-cowboy-bebop-ban-blu-raytap-17.html">{{ item.movieName }}</a></h4>
+                                        </div>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                        <a href="https://animetvn.com/lich-su" class="history-film-list-view-more">Xem tất cả</a>
+
+                        <div class="gnarty-offads">
+                            <div id="pc_sidebar_300_250"></div>
+                        </div>
+                        <div class="gnarty-offads">
+                            <div class="film-play-ads">
+
+
+
+
+                                <script type="text/javascript"
+                                    src="//media1.admicro.vn/ads_codes/ads_box_14468.ads"></script>
+                                <script type="text/javascript"
+                                    src="//media1.admicro.vn/ads_codes/ads_code_14468.ads"></script>
+
+                            </div>
+                        </div>
+                        <div class="widget wranks">
+                            <h3>Bảng xếp hạng</h3>
+                            <div class="tabs_wrank">
+
+
+
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active" id="wrank-day">
+                                        <ul class="rank-film-list">
+                                            <li class="item">
+                                                <a href="https://animetvn.com/thong-tin-phim/f2105-one-piece.html">
+                                                    <div class="r_c_wrap"><span class="r_c">1</span></div>
+                                                    <img width="" class="thumb lazyload img-responsive"
+                                                        src="https://photos.animetvn.tv/upload/film/e7c936b5eacd4fd0f89bd7b651954e6b1383245216_full.jpg"
+                                                        alt="One Piece - Đảo Hải Tặc | Vua Hải Tặc">
+                                                    <h3 class="title">One Piece</h3>
+                                                </a>
+                                                <div>
+                                                    <span class="time">1013/??? Tập (Delay)</span>
+                                                </div>
+                                                <div>
+                                                    <span class="viewed"><span>Lượt xem:</span> 8,836</span>
+                                                </div>
+                                            </li>
+                                            <li class="item">
+                                                <a
+                                                    href="https://animetvn.com/thong-tin-phim/f3484-detective-conan.html">
+                                                    <div class="r_c_wrap"><span class="r_c">2</span></div>
+                                                    <img width="" class="thumb lazyload img-responsive"
+                                                        src="https://photos.animetvn.tv/upload/film/Pb8f2SL-2.jpg"
+                                                        alt="Detective Conan - Thám Tử Lừng Danh Conan | Meitantei Conan | 名探偵コナン">
+                                                    <h3 class="title">Detective Conan</h3>
+                                                </a>
+                                                <div>
+                                                    <span class="time">1038/??? Tập</span>
+                                                </div>
+                                                <div>
+                                                    <span class="viewed"><span>Lượt xem:</span> 4,252</span>
+                                                </div>
+                                            </li>
+                                            <li class="item">
+                                                <a
+                                                    href="https://animetvn.com/thong-tin-phim/f5138-black-clover-tv.html">
+                                                    <div class="r_c_wrap"><span class="r_c">3</span></div>
+                                                    <img width="" class="thumb lazyload img-responsive"
+                                                        src="https://photos.animetvn.tv/upload/film/ac36818309ca8e2c144095f00bd314509d9601f7.jpg"
+                                                        alt="Black Clover (TV) - Black Clover (2017)">
+                                                    <h3 class="title">Black Clover (TV)</h3>
+                                                </a>
+                                                <div>
+                                                    <span class="time">170/170 Tập</span>
+                                                </div>
+                                                <div>
+                                                    <span class="viewed"><span>Lượt xem:</span> 3,945</span>
+                                                </div>
+                                            </li>
+                                            <li class="item">
+                                                <a
+                                                    href="https://animetvn.com/thong-tin-phim/f6385-arifureta-shokugyou-de-sekai-saikyou-2nd-season.html">
+                                                    <div class="r_c_wrap"><span class="r_c">4</span></div>
+                                                    <img width="" class="thumb lazyload img-responsive"
+                                                        src="https://photos.animetvn.tv/upload/film/119668.jpg"
+                                                        alt="Arifureta Shokugyou de Sekai Saikyou 2nd Season - From Common Job Class to the Strongest in the World 2nd Season">
+                                                    <h3 class="title">Arifureta Shokugyou de Sekai Saikyou 2nd Season
+                                                    </h3>
+                                                </a>
+                                                <div>
+                                                    <span class="time">13/12 Tập</span>
+                                                </div>
+                                                <div>
+                                                    <span class="viewed"><span>Lượt xem:</span> 3,421</span>
+                                                </div>
+                                            </li>
+                                            <li class="item">
+                                                <a href="https://animetvn.com/thong-tin-phim/f5243-dau-la-dai-luc.html">
+                                                    <div class="r_c_wrap"><span class="r_c">5</span></div>
+                                                    <img width="" class="thumb lazyload img-responsive"
+                                                        src="https://photos.animetvn.tv/upload/film/Dau-La-Dai-Luc-Phan-2.jpg"
+                                                        alt="Đấu La Đại Lục - Douluo Dalu">
+                                                    <h3 class="title">Đấu La Đại Lục</h3>
+                                                </a>
+                                                <div>
+                                                    <span class="time">203/?? Tập</span>
+                                                </div>
+                                                <div>
+                                                    <span class="viewed"><span>Lượt xem:</span> 2,993</span>
+                                                </div>
+                                            </li>
+                                            <li class="item">
+                                                <a
+                                                    href="https://animetvn.com/thong-tin-phim/f6468-otome-game-sekai-wa-mob-ni-kibishii-sekai-desu.html">
+                                                    <div class="r_c_wrap"><span class="r_c">6</span></div>
+                                                    <img width="" class="thumb lazyload img-responsive"
+                                                        src="https://photos.animetvn.tv/upload/film/119795.jpg"
+                                                        alt="Otome Game Sekai wa Mob ni Kibishii Sekai desu - Trapped in a Dating Sim: The World of Otome Games is Tough for Mobs, Otomege Sekai wa Mob ni Kibishii Sekai desu, Mobseka, Thế giới Otomegame thật khắc nghiệt với nhân vật quần chúng">
+                                                    <h3 class="title">Otome Game Sekai wa Mob ni Kibishii Sekai desu
+                                                    </h3>
+                                                </a>
+                                                <div>
+                                                    <span class="time">02/?? Tập</span>
+                                                </div>
+                                                <div>
+                                                    <span class="viewed"><span>Lượt xem:</span> 2,675</span>
+                                                </div>
+                                            </li>
+                                            <li class="item">
+                                                <a
+                                                    href="https://animetvn.com/thong-tin-phim/f6455-yuusha-yamemasu.html">
+                                                    <div class="r_c_wrap"><span class="r_c">7</span></div>
+                                                    <img width="" class="thumb lazyload img-responsive"
+                                                        src="https://photos.animetvn.tv/upload/film/118931.jpg"
+                                                        alt="Yuusha, Yamemasu - I'm Quitting Heroingl, Yuuyame">
+                                                    <h3 class="title">Yuusha, Yamemasu</h3>
+                                                </a>
+                                                <div>
+                                                    <span class="time">02/?? Tập</span>
+                                                </div>
+                                                <div>
+                                                    <span class="viewed"><span>Lượt xem:</span> 2,625</span>
+                                                </div>
+                                            </li>
+                                            <li class="item">
+                                                <a href="https://animetvn.com/thong-tin-phim/f5984-jujutsu-kaisen.html">
+                                                    <div class="r_c_wrap"><span class="r_c">8</span></div>
+                                                    <img width="" class="thumb lazyload img-responsive"
+                                                        src="https://photos.animetvn.tv/upload/film/109222.jpg"
+                                                        alt="Jujutsu Kaisen - Sorcery Fight">
+                                                    <h3 class="title">Jujutsu Kaisen</h3>
+                                                </a>
+                                                <div>
+                                                    <span class="time">24/24 Tập</span>
+                                                </div>
+                                                <div>
+                                                    <span class="viewed"><span>Lượt xem:</span> 2,377</span>
+                                                </div>
+                                            </li>
+                                            <li class="item">
+                                                <a href="https://animetvn.com/thong-tin-phim/f6464-spy-x-family.html">
+                                                    <div class="r_c_wrap"><span class="r_c">9</span></div>
+                                                    <img width="" class="thumb lazyload img-responsive"
+                                                        src="https://photos.animetvn.tv/upload/film/119156.jpg"
+                                                        alt="Spy x Family - SPY×FAMILY">
+                                                    <h3 class="title">Spy x Family</h3>
+                                                </a>
+                                                <div>
+                                                    <span class="time">01/?? Tập</span>
+                                                </div>
+                                                <div>
+                                                    <span class="viewed"><span>Lượt xem:</span> 2,241</span>
+                                                </div>
+                                            </li>
+                                            <li class="item">
+                                                <a
+                                                    href="https://animetvn.com/thong-tin-phim/f2104-naruto-shippuuden.html">
+                                                    <div class="r_c_wrap"><span class="r_c">10</span></div>
+                                                    <img width="" class="thumb lazyload img-responsive"
+                                                        src="https://photos.animetvn.tv/upload/film/5rHPGDc-1.jpg"
+                                                        alt="Naruto Shippuuden - Naruto: Sức Mạnh Vĩ Thú | Naruto Phần 2">
+                                                    <h3 class="title">Naruto Shippuuden</h3>
+                                                </a>
+                                                <div>
+                                                    <span class="time">500/500 Tập</span>
+                                                </div>
+                                                <div>
+                                                    <span class="viewed"><span>Lượt xem:</span> 2,133</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="wrank-week"></div>
+                                    <div role="tabpanel" class="tab-pane" id="wrank-month"></div>
+                                    <div role="tabpanel" class="tab-pane" id="wrank-q"></div>
+                                    <div role="tabpanel" class="tab-pane" id="wrank-year"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="pc_footer_980_90"></div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="mobile_footer_300_70"></div>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}
